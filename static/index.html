@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Оценка трудозатрат</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <h1>Задача и факт</h1>
+    <p class="lead">Опишите задачу, укажите приоритет, тип и команду.</p>
+
+    <form id="task-form" class="card">
+      <label>
+        Задача
+        <textarea name="title" placeholder="Например, Деплой" required></textarea>
+      </label>
+
+      <div class="row">
+        <label>
+          Приоритет
+          <select id="priority" name="priority" required></select>
+        </label>
+
+        <label>
+          Тип
+          <select id="type" name="type" required></select>
+        </label>
+      </div>
+
+      <label>
+        Команда
+        <select id="team" name="team" required></select>
+      </label>
+
+      <div class="row">
+        <label>
+          Story points
+          <input name="story_points" type="number" min="0" step="0.5" value="5" />
+        </label>
+
+        <label>
+          Фактические часы
+          <input name="actual_hours" type="number" min="0.1" step="0.1" placeholder="Для сохранения" />
+        </label>
+      </div>
+
+      <div class="actions">
+        <button class="btn primary" type="submit">Сохранить в БД</button>
+        <button class="btn" id="btn-predict" type="button">Оценить часы</button>
+      </div>
+    </form>
+
+    <div id="msg" class="msg"></div>
+    <div id="predict-out" class="predict-out" hidden></div>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

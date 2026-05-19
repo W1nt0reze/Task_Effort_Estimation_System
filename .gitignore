@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Private data and generated artifacts
+data/raw/*
+data/processed/*
+data/*.db
+*.sqlite
+*.sqlite3
+*.xlsx
+*.csv
+models/*
+*.joblib
+
+# Keep folder structure
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!models/.gitkeep
+
+# Logs and secrets
+*.log
+.env
